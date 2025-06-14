@@ -1,0 +1,80 @@
+# Configuração do GitHub Pages
+title: "Lucas Cardoso - Desenvolvedor Full Stack"
+description: "Portfólio profissional demonstrando projetos e habilidades em desenvolvimento web moderno"
+url: "https://lucascardoso.github.io"
+baseurl: "/portfolio-lucas-cardoso"
+
+# Autor
+author:
+  name: "Lucas Cardoso"
+  email: "lucas@exemplo.com"
+  linkedin: "lucascardoso"
+  github: "lucascardoso"
+
+# GitHub Pages
+theme: null
+plugins: []
+
+# Configurações do site
+lang: pt-BR
+timezone: America/Sao_Paulo
+
+# SEO
+google_site_verification: ""
+google_analytics: ""
+
+# Configurações de build
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Exclusões
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - .gitignore
+  - .git
+
+# Inclusões
+include:
+  - _pages
+  - assets
+
+# Configurações de compressão
+sass:
+  style: compressed
+
+# Configurações de segurança
+safe: true
+incremental: false
+
+# Metadados do projeto
+project:
+  name: "Portfólio Lucas Cardoso"
+  version: "1.0.0"
+  description: "Portfólio pessoal demonstrando habilidades em desenvolvimento web"
+  keywords: "portfolio, desenvolvimento web, javascript, html, css, react, node.js"
+
+# Redes sociais
+social:
+  - name: GitHub
+    url: "https://github.com/lucascardoso"
+    icon: "fab fa-github"
+  - name: LinkedIn
+    url: "https://linkedin.com/in/lucascardoso"
+    icon: "fab fa-linkedin"
+  - name: Email
+    url: "mailto:lucas@exemplo.com"
+    icon: "fas fa-envelope"
+
+# Projetos em destaque
+featured_projects:
+  - name: "Sistema de Calculadoras Financeiras"
+    description: "Plataforma educacional com sistema de temas dinâmico"
+    url: "https://luaraujo.com"
+    technologies: ["JavaScript", "HTML5", "CSS3", "Bootstrap", "Chart.js"]
+    image: "assets/images/screenshots/homepage-light.png"

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Calculadoras Financeiras - Lucas Cardoso</title>
+    <meta name="description" content="Detalhes do projeto de calculadoras financeiras com sistema de temas dinâmico e gráficos interativos.">
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/portfolio.css">
+    <link rel="stylesheet" href="../assets/css/themes.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Theme Detection Script -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('portfolio-theme') || 
+                             (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-icon">&lt;/&gt;</span>
+                Lucas Cardoso
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Voltar ao Portfólio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://luaraujo.com" target="_blank">Ver Site Online</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="theme-toggle-btn" id="themeToggle" aria-label="Alternar tema">
+                            <i class="fas fa-sun" id="themeIcon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="hero-section project-hero">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <span class="hero-greeting">Projeto em Destaque</span>
+                        <h1 class="hero-title">
+                            Sistema de <span class="text-primary">Calculadoras</span> Financeiras
+                        </h1>
+                        <h2 class="hero-subtitle">Plataforma Educacional Interativa</h2>
+                        <p class="hero-description">
+                            Uma aplicação web completa para simulações financeiras, desenvolvida com foco em 
+                            experiência do usuário, performance e acessibilidade.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="https://luaraujo.com" target="_blank" class="btn btn-primary btn-lg me-3">
+                                Ver Site Online <i class="fas fa-external-link-alt ms-2"></i>
+                            </a>
+                            <a href="#features" class="btn btn-outline-primary btn-lg">
+                                Ver Recursos <i class="fas fa-arrow-down ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="project-showcase">
+                        <div class="showcase-main">
+                            <img src="../assets/images/screenshots/homepage-desktop-light-theme.png" 
+                                 alt="Homepage do projeto - Tema Claro" 
+                                 class="img-fluid rounded-lg shadow-xl">
+                        </div>
+                        <div class="showcase-overlay">
+                            <img src="../assets/images/screenshots/homepage-desktop-light.png" 
+                                 alt="Homepage do projeto - Tema Escuro" 
+                                 class="img-fluid rounded-lg shadow-xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section id="overview" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title">Visão Geral do Projeto</h2>
+                    <p class="section-subtitle">Uma plataforma completa para educação financeira</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h4>Objetivo</h4>
+                        <p>Criar uma plataforma educacional para simulações financeiras, permitindo que usuários testem diferentes cenários de investimento de forma intuitiva e visual.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Público-Alvo</h4>
+                        <p>Pessoas interessadas em educação financeira, planejamento de investimentos e comparação de produtos financeiros.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Desafio</h4>
+                        <p>Transformar cálculos financeiros complexos em uma interface simples e interativa, com visualizações claras e resultados compreensíveis.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h4>Solução</h4>
+                        <p>Desenvolvimento de uma aplicação web responsiva com sistema de temas dinâmico, gráficos interativos e interface intuitiva.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section-padding bg-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Recursos Principais</h2>
+                    <p class="section-subtitle">Funcionalidades que fazem a diferença</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h4>Sistema de Temas Dinâmico</h4>
+                        <p>Alternância instantânea entre tema claro e escuro, com detecção automática da preferência do sistema e eliminação completa de "flash" na primeira carga.</p>
+                        <ul class="feature-details">
+                            <li>Zero flash na mudança de tema</li>
+                            <li>Detecção de preferência do sistema</li>
+                            <li>Persistência de escolha do usuário</li>
+                            <li>Transições suaves</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Gráficos Interativos</h4>
+                        <p>Visualizações dinâmicas que se adaptam aos dados inseridos pelo usuário, utilizando Chart.js para criar experiências visuais envolventes.</p>
+                        <ul class="feature-details">
+                            <li>Gráficos de linha para evolução temporal</li>
+                            <li>Gráficos de barras para comparações</li>
+                            <li>Adaptação automática ao tema ativo</li>
+                            <li>Tooltips informativos</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h4>Calculadoras Especializadas</h4>
+                        <p>Três calculadoras diferentes para atender diversas necessidades de planejamento financeiro e educação sobre investimentos.</p>
+                        <ul class="feature-details">
+                            <li>Simulador Educacional</li>
+                            <li>Comparação PGBL vs CDB</li>
+                            <li>Simulador de Investimentos</li>
+                            <li>Cálculos precisos em tempo real</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Design Responsivo</h4>
+                        <p>Interface totalmente adaptável que funciona perfeitamente em dispositivos móveis, tablets e desktops.</p>
+                        <ul class="feature-details">
+                            <li>Layout adaptável para todos os tamanhos de tela</li>
+                            <li>Navegação otimizada para mobile</li>
+                            <li>Performance consistente</li>
+                            <li>Testes em múltiplos dispositivos</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-zap"></i>
+                        </div>
+                        <h4>Performance Otimizada</h4>
+                        <p>Carregamento rápido e experiência fluida através de otimizações de código e uso eficiente de recursos.</p>
+                        <ul class="feature-details">
+                            <li>CSS e JavaScript otimizados</li>
+                            <li>Uso eficiente de CDNs</li>
+                            <li>Imagens otimizadas</li>
+                            <li>Código limpo e organizdo</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-universal-access"></i>
+                        </div>
+                        <h4>Acessibilidade</h4>
+                        <p>Desenvolvido seguindo as melhores práticas de acessibilidade para garantir que todos possam usar a plataforma.</p>
+                        <ul class="feature-details">
+                            <li>Navegação por teclado</li>
+                            <li>Contrast adequado em ambos os temas</li>
+                            <li>Estrutura semântica HTML5</li>
+                            <li>Labels descritivos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Gallery -->
+    <section id="gallery" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Galeria de Screenshots</h2>
+                    <p class="section-subtitle">Veja o projeto em ação</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="screenshot-card">
+                        <img src="../assets/images/screenshots/homepage-desktop-light-theme.png" 
+                             alt="Homepage - Tema Claro" 
+                             class="img-fluid rounded-lg">
+                        <div class="screenshot-info">
+                            <h5>Homepage - Tema Claro</h5>
+                            <p>Design limpo e moderno com excelente contraste</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="screenshot-card">
+                        <img src="../assets/images/screenshots/homepage-desktop-light.png" 
+                             alt="Homepage - Tema Escuro" 
+                             class="img-fluid rounded-lg">
+                        <div class="screenshot-info">
+                            <h5>Homepage - Tema Escuro</h5>
+                            <p>Modo escuro elegante para reduzir fadiga visual</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="screenshot-card">
+                        <img src="../assets/images/screenshots/calculator-investments-functioning.png" 
+                             alt="Calculadora de Investimentos" 
+                             class="img-fluid rounded-lg">
+                        <div class="screenshot-info">
+                            <h5>Simulador de Investimentos</h5>
+                            <p>Gráficos interativos e tabelas detalhadas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="screenshot-card">
+                        <img src="../assets/images/screenshots/calculator-educational-demo.png" 
+                             alt="Calculadora Educacional" 
+                             class="img-fluid rounded-lg">
+                        <div class="screenshot-info">
+                            <h5>Simulador Educacional</h5>
+                            <p>Interface intuitiva para aprendizado financeiro</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 mb-4">
+                    <div class="screenshot-card">
+                        <img src="../assets/images/screenshots/homepage-mobile-responsive.png" 
+                             alt="Versão Mobile" 
+                             class="img-fluid rounded-lg mx-auto d-block" 
+                             style="max-width: 375px;">
+                        <div class="screenshot-info text-center">
+                            <h5>Versão Mobile</h5>
+                            <p>Design totalmente responsivo para dispositivos móveis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="tech-stack" class="section-padding bg-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Tecnologias Utilizadas</h2>
+                    <p class="section-subtitle">Stack moderno e confiável</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h5>HTML5</h5>
+                        <p>Estrutura semântica e acessível</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <h5>CSS3</h5>
+                        <p>Estilos modernos e responsivos</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <h5>JavaScript ES6+</h5>
+                        <p>Funcionalidades interativas</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fab fa-bootstrap"></i>
+                        </div>
+                        <h5>Bootstrap 5</h5>
+                        <p>Framework CSS responsivo</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h5>Chart.js</h5>
+                        <p>Biblioteca para gráficos</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fab fa-font-awesome"></i>
+                        </div>
+                        <h5>Font Awesome</h5>
+                        <p>Ícones vetoriais</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <h5>Google Fonts</h5>
+                        <p>Tipografia moderna</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h5>Hostinger</h5>
+                        <p>Hospedagem confiável</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Processo de Desenvolvimento</h2>
+                    <p class="section-subtitle">Como o projeto foi criado</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 mb-4">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h5>Planejamento</h5>
+                        <p>Análise de requisitos, definição de escopo e criação da arquitetura do projeto.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h5>Design</h5>
+                        <p>Criação do sistema de design, wireframes e prototipação da interface.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h5>Desenvolvimento</h5>
+                        <p>Implementação das funcionalidades, sistema de temas e integração com gráficos.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h5>Otimização</h5>
+                        <p>Testes, correções, otimização de performance e deploy final.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section id="results" class="section-padding bg-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Resultados Alcançados</h2>
+                    <p class="section-subtitle">Métricas e conquistas do projeto</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="result-card">
+                        <div class="result-number">100%</div>
+                        <h5>Responsivo</h5>
+                        <p>Funciona perfeitamente em todos os dispositivos</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="result-card">
+                        <div class="result-number">0ms</div>
+                        <h5>Flash de Tema</h5>
+                        <p>Eliminação completa do flash na mudança de tema</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="result-card">
+                        <div class="result-number">3</div>
+                        <h5>Calculadoras</h5>
+                        <p>Diferentes ferramentas para educação financeira</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="result-card">
+                        <div class="result-number">2</div>
+                        <h5>Temas</h5>
+                        <p>Sistema dinâmico com modo claro e escuro</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="cta" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title">Interessado em Trabalhar Comigo?</h2>
+                    <p class="section-subtitle">
+                        Este projeto demonstra minha capacidade de criar soluções web completas, 
+                        desde o planejamento até a implementação final.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="https://luaraujo.com" target="_blank" class="btn btn-primary btn-lg me-3">
+                            Explorar o Projeto <i class="fas fa-external-link-alt ms-2"></i>
+                        </a>
+                        <a href="../index.html#contact" class="btn btn-outline-primary btn-lg">
+                            Entrar em Contato <i class="fas fa-paper-plane ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>&copy; 2024 Lucas Cardoso. Todos os direitos reservados.</p>
+                    <p class="footer-note">
+                        <a href="../index.html" class="text-decoration-none">← Voltar ao Portfólio</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/portfolio.js"></script>
+    
+    <!-- Additional styles for project page -->
+    <style>
+        .project-showcase {
+            position: relative;
+        }
+        
+        .showcase-main {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .showcase-overlay {
+            position: absolute;
+            top: -2rem;
+            right: -2rem;
+            width: 60%;
+            z-index: 1;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .project-showcase:hover .showcase-overlay {
+            opacity: 1;
+            transform: translate(10px, -10px);
+        }
+        
+        .info-card, .feature-card, .tech-card, .process-step, .result-card, .screenshot-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .info-card:hover, .feature-card:hover, .tech-card:hover, .process-step:hover, .result-card:hover, .screenshot-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .info-icon, .feature-icon, .tech-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-details {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        
+        .feature-details li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-details li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .step-number {
+            width: 3rem;
+            height: 3rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.25rem;
+            margin: 0 auto 1rem;
+        }
+        
+        .result-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .screenshot-info {
+            margin-top: 1rem;
+        }
+        
+        .screenshot-info h5 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .screenshot-info p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin: 0;
+        }
+        
+        .cta-actions {
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 767.98px) {
+            .showcase-overlay {
+                display: none;
+            }
+            
+            .cta-actions {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</body>
+</html>

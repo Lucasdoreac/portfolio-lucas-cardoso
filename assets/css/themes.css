@@ -1,0 +1,81 @@
+/* Theme System for Portfolio */
+
+/* Base theme transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Light Theme (Default) */
+:root {
+  color-scheme: light;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* Auto-detect system preference */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    /* Inherit dark theme variables from portfolio.css */
+    color-scheme: dark;
+  }
+}
+
+/* Theme toggle animations */
+.theme-toggle-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle-btn i {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+[data-theme="dark"] .theme-toggle-btn i.fa-sun {
+  transform: rotate(180deg) scale(0);
+  opacity: 0;
+}
+
+[data-theme="light"] .theme-toggle-btn i.fa-moon {
+  transform: rotate(-180deg) scale(0);
+  opacity: 0;
+}
+
+/* Theme-specific adjustments */
+[data-theme="dark"] .code-window {
+  background: #1e293b;
+  border-color: #475569;
+}
+
+[data-theme="dark"] .window-header {
+  background: #334155;
+  border-color: #475569;
+}
+
+[data-theme="dark"] .navbar-custom {
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(20px);
+}
+
+[data-theme="dark"] .hero-section::before {
+  background: radial-gradient(ellipse at top right, rgba(59, 130, 246, 0.2) 0%, transparent 50%);
+}
+
+/* Smooth scrolling and reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Theme persistence */
+.theme-transition-disable * {
+  transition: none !important;
+}
