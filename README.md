@@ -24,7 +24,7 @@ Uma plataforma educacional completa para simulações financeiras, destacando:
 - ♿ **Acessibilidade** completa
 - 🧮 **3 calculadoras especializadas**
 
-**Ver online:** [luaraujo.com](https://luaraujo.com)
+**Ver online:** [portfolio-lucas-cardoso](https://lucasdoreac.github.io/portfolio-lucas-cardoso)
 
 ## 🛠️ Tecnologias Utilizadas
 
